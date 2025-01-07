@@ -1,0 +1,13 @@
+Position of counterweight: hole #3. Someone had changed it to hole #4 so that the helicopter never touched ground while at rest.
+
+1) Ran IMU and added functions to avoid dividing by zero etc.
+
+2) Discovered a little offset between pitch angle in IMU and encoders (negligible, but we added a constant offset)
+Offset between elevation angles were huge (~0.5 rads). Offset based on mean between the two.
+
+3) Tried using the rule from slides that the largest pole should be x2-x20 times that of the largest pole in the original system,
+then spread them out in a half circle. 
+
+4) Moved the offset Vs0 out of LQR controller and placed it before the voltage conversion. This way the observer doesn't get fed with "Vs=5,9V" at the beginning. Still no obvious change.
+
+5) Motor constant K_f has been calculated wrong all this time, so the model is rubbish. Amazing that it flies as well as it does despite this. Added correct equation.

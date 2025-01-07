@@ -1,0 +1,6 @@
+fig = openfig("fig09_results_p1_pitch.fig")
+
+axObjs = fig.Children
+dataObjs = axObjs.Children
+
+y = dataObjs(1)

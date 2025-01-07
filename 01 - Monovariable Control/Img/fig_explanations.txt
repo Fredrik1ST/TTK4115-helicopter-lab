@@ -1,0 +1,5 @@
+fig01: 
+	attempt at manually controlling the helicopter so that it stays still. Only a gain added to Vs and Vd. Angles are not correct (zero = resting on the table).
+
+fig02:
+	trying to manually control elevation and pitch so that they stay still at equilibrium, for finding Vs0.
